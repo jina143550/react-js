@@ -51,7 +51,20 @@ function App() {
         currentPage={currentPage}
       />
       <main className="main-content">
-        {currentPage === 'products' ? (
+        {currentPage === 'landing' ? (
+          <div className="landing-page">
+            <div className="landing-content">
+              <h1 className="company-name">Paradise Nursery</h1>
+              <p className="tagline">Where Green Meets Serenity</p>
+              <button 
+                className="get-started-btn"
+                onClick={() => handleNavigate('products')}
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+        ) : currentPage === 'products' ? (
           <ProductListing 
             plants={plants}
             onAddToCart={handleAddToCart}
