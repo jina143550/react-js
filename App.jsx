@@ -6,7 +6,7 @@ import Cart from './components/Cart'
 import { plants } from './data/plants'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('products')
+  const [currentPage, setCurrentPage] = useState('landing')
   const [cartItems, setCartItems] = useState([])
 
   const handleAddToCart = (plant) => {
