@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TravelWorld - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">🌍 TravelWorld</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Search destinations..." />
+      <button class="btn-search" onclick="handleSearch()">Search</button>
+      <button class="btn-clear" onclick="handleClear()">Clear</button>
+    </div>
+  </nav>
+
+  <!-- Introduction -->
+  <section class="hero">
+    <h1>Discover Your Next Adventure</h1>
+    <p>Explore the world's most breathtaking destinations — from serene beaches to ancient temples and vibrant countries.</p>
+    <a href="#beaches" class="btn">Explore Now</a>
+  </section>
+
+  <!-- Beach Recommendations -->
+  <section id="beaches" class="recommendations">
+    <h2>🏖️ Beach Recommendations</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Maldives Beach" />
+        <h3>Maldives</h3>
+        <p>Crystal-clear waters and white sandy beaches make the Maldives a paradise on Earth.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400" alt="Bali Beach" />
+        <h3>Bali, Indonesia</h3>
+        <p>Famous for its stunning sunsets, surf-friendly waves, and vibrant beach culture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Temple Recommendations -->
+  <section id="temples" class="recommendations alt">
+    <h2>🛕 Temple Recommendations</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400" alt="Angkor Wat" />
+        <h3>Angkor Wat, Cambodia</h3>
+        <p>The world's largest religious monument, a masterpiece of Khmer architecture.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400" alt="Senso-ji Temple" />
+        <h3>Senso-ji, Japan</h3>
+        <p>Tokyo's oldest temple, a symbol of Japanese culture and spiritual heritage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Country Recommendations -->
+  <section id="countries" class="recommendations">
+    <h2>🌐 Country Recommendations</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400" alt="France" />
+        <h3>France</h3>
+        <p>From the Eiffel Tower to the French Riviera, France offers timeless beauty and culture.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=400" alt="Japan" />
+        <h3>Japan</h3>
+        <p>A perfect blend of ancient traditions and futuristic innovation across stunning landscapes.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 TravelWorld. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (!query) return;
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    }
+
+    function handleClear() {
+      document.getElementById('searchInput').value = '';
+      document.querySelectorAll('.card').forEach(card => card.style.display = 'block');
+    }
+  </script>
+
+</body>
+</html>
